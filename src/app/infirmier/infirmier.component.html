@@ -1,0 +1,124 @@
+<body class="theme-blush">
+    <!-- Page Loader -->
+
+
+    <!-- Overlay For Sidebars -->
+
+
+    <!-- #Float icon -->
+  
+
+    <!-- Morphing Search  -->
+
+
+    <!-- Top Bar -->
+    <nav class="navbar clearHeader">
+        <div class="col-12">
+            <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
+                    href="index-2.html">eShare-DMP</a> </div>
+
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="admin-image"> <img [src]="'data:image/png;base64,'+profile.photo" alt="" style="height: 72px;"> </div>
+                <div class="admin-action-info"> <span>Bienvenu Infirmier</span>
+                    <h3>{{profile.nom}}</h3>
+                    <h3> {{profile.prenom}}</h3>
+                    <ul>
+
+                        <li><a (click)="logout()"   title="Déconnexion"><i class="zmdi zmdi-sign-in"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+
+
+
+
+                    <li><a [routerLink]="['/infirmier/nouveaupatient']" class="menu-toggle"><i
+                                class="zmdi zmdi-account-o"></i><span>NOUVEAU PATIENT</span> </a>
+
+                    </li>
+                    <li><a [routerLink]="['/infirmier/ancienpatient']" class="menu-toggle"><i
+                                class="zmdi zmdi-account-o"></i><span>ANCIEN PATIENT</span> </a>
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+
+        <!-- Right Sidebar -->
+       
+
+    </section>
+    <section class="content home">
+        <div class="card">
+
+            <div class="body">
+
+               
+                 
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="text" name="Cin" [(ngModel)]="rech.cin" class="form-control" placeholder="CIN">
+                            </div>
+                            <button (click)="rechercher()"
+                            class="btn btn-raised g-bg-cyan">Valider</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>CODE PATIENT</th>
+                                    <th>NOM</th>
+                                    <th>PRENOM</th>
+                                    <th>DATE DE NAISSANCE</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let tab of  PatientDTO " >
+                                  <td>{{tab.iD_Patient}}</td>
+                                    <td>{{tab.nom}}</td>
+                                    <td>{{tab.prenom}}</td>
+                                    <td>{{tab.dateDeNaissance}}</td>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+              
+            </div>
+        </div>
+
+    </section>
+
+
+    <div>
+
+
+
+
+        <router-outlet></router-outlet>
+    </div>
+    <div class="color-bg"></div>
+</body>

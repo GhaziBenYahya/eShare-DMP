@@ -1,0 +1,85 @@
+<body class="theme-red">
+
+
+
+
+    <!-- #Float icon -->
+
+
+    <!-- Morphing Search  -->
+    <div id="morphsearch" class="morphsearch">
+        <form class="morphsearch-form">
+            <div class="form-group m-0">
+                <table>
+                    <tr>
+
+                        <td> <input (keyup.enter)="search($event)" placeholder="ID PATIENT..."
+                                class="form-control morphsearch-input" /></td>
+                        <td> <button class="morphsearch-submit" type="submit">Search</button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+
+        <span class="morphsearch-close"></span>
+    </div>
+
+    <!-- Top Bar -->
+    <nav class="navbar clearHeader">
+        <div class="col-12">
+            <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
+                    href="index-2.html">eShare-DMP</a> </div>
+
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="admin-image"> <img [src]="'data:image/png;base64,'+profile.photo" alt="" style="height: 72px;"> </div>
+                <div class="admin-action-info"> <span>Bienvenu Dr</span>
+                    <h3>{{profile.nom}} {{profile.prenom}}</h3>
+                  
+                    <ul>
+
+                        <li><a (click)="logout()" title="Déconnexion" ><i class="zmdi zmdi-sign-in"></i></a></li>
+                    </ul>
+
+                </div>
+               
+             
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+
+
+
+
+                    <li><a class="menu-toggle" [routerLink]="['/docteur/listep']"><i
+                                class="zmdi zmdi-account-o"></i><span>LISTE DES PATIENTS</span> </a>
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+
+        <!-- Right Sidebar -->
+
+
+    </section>
+    
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="color-bg"></div>
+</body>

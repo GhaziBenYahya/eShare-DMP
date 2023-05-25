@@ -1,0 +1,42 @@
+<div class="authentication" style="max-width: 100vw;">
+    <div class="container" style="width: 360px;">
+
+        <div class="card-top"></div>
+        <div class="card">
+            <h1 class="title"><span>eShare-DMP</span>Login <span class="msg">Sign in to start your session</span>
+            </h1>
+            <div class="body">
+                <form>
+                    <div class="input-group icon before_span">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
+                        <div class="form-line">
+                            <input type="text"   [(ngModel)]="user.Token"  class="form-control"name="token" placeholder="Code" required
+                                autofocus>
+                        </div>
+                    </div>
+                    <div class="input-group icon before_span">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <div class="form-line">
+                            <input type="password"  [(ngModel)]="user.Password" class="form-control"  name="Password" placeholder="Nouveau Mot De Passe" required>
+                        </div>
+                    </div>
+                    <div class="input-group icon before_span">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <div class="form-line">
+                            <input type="password"  [(ngModel)]="user.ConfirmPassword" class="form-control"  name="Password" placeholder="Confirme Mot De Passe" required>
+                        </div>
+                    </div>
+                    <div>
+                        
+                        <div class="text-center">
+                            <a (click)="confirm()"  class="btn btn-raised waves-effect g-bg-cyan">VALIDER</a>
+                            <a [routerLink]="['']" class="btn btn-raised waves-effect">connexion</a>
+                        </div>
+                        <div class="text-center"> <a [routerLink]="['/validation']" >
+                            Mot de passe oublié?</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

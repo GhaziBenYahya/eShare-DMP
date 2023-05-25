@@ -1,0 +1,55 @@
+<div class="authentication"  style="max-width: 100vw;" >
+    <div class="container" style="width: 360px;" >
+
+        <div class="card-top"  ></div>
+        <div class="card" style="width: 400px;">
+            
+        
+            <h1 class="title"><span>eShare-DMP</span>Login <span class="msg">Connectez-vous pour démarrer votre session</span>
+            </h1>
+            <div class="body">
+                <form [formGroup]="movieForm">
+                    <div class="col-md-12">
+                
+                        <div class="form-line">
+                            <input type="text"   [(ngModel)]="user.Email"    email="true" class="form-control" name="Email" placeholder="Email"   formControlName='email' minlength="10" 
+                                >
+                                <small style="color: brown;" *ngIf="user.Email &&   movieForm.get('email').errors"><span
+                                    *ngIf="movieForm.get('email').errors.email ; else error_min">formata invalide</span>
+                                <ng-template #error_min>min 10 carac et format email</ng-template>
+                              
+                            </small>
+            
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+    
+                        <div class="form-line">
+                            <input type="password"  [(ngModel)]="user.Password" class="form-control"  name="Password" placeholder="Mot De Passe"   formControlName='Password' minlength="9"  >
+                            <small style="color: brown;" >
+                              
+                            <ng-template #error_min>min 10 carac et format email</ng-template>
+                          
+                        </small>
+                        </div>
+                    </div>
+                    <div>
+                       
+                        <div class="text-center">
+                            <button class="form-control" [disabled]="!movieForm.valid" (click)="login()" class="btn btn-raised waves-effect g-bg-cyan">Connexion</button>
+                            <a [routerLink]="['/register']" class="btn btn-raised waves-effect">S'inscrire</a>
+                        </div>
+                        <div class="text-center"> <a [routerLink]="['/validation']" >Mot de passe oublié?</a></div>
+                    </div>
+                    
+                    
+                </form>
+                
+            </div>
+            <div class="card-top"  style="height: 100px;" ></div>
+            
+        </div>
+        
+    </div>
+    
+</div>
